@@ -58,6 +58,9 @@ importFrom(utils, installed.packages,
 importFrom(XML, xmlGetAttr,
                 htmlTreeParse)
 
+importFrom(httr, content,
+                 GET)
+
 importFrom(Biobase, createPackage)
 
 importFrom(BiocManager, available)
