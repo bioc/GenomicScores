@@ -23,20 +23,22 @@ Function for randomly sampling genomic gscores from \code{GScores} objects.
   \item{...}{In the call to the \code{rgscores}() method one can additionally
                  set the following arguments:
                  \itemize{
-                   \item{pop}{Character string vector of length one, specifying
-                              the scores population from which we want to sample
-                              scores. By default, its value is 'defaultPopulation(object)'.
-                              Use \code{\link{populations}()} to find out the
-                              available scores populations.}
-                   \item{scores.only}{Flag setting whether only the scores should
-                                      be returned as a numeric vector (\code{TRUE}),
-                                      instead of returning them as a metadata column
-                                      in a \code{GRanges} object (\code{FALSE}, default).}
-                   \item{ranges}{Either a \code{GRanges} object or a character string
-                                 vector of sequence names. Scores will be sampled from
-                                 the given genomic regions, which by default correspond
-                                 to the entire genomic space of \code{object}. Currently,
-                                 only entire chromosomes are considered.}
+                   \item \code{pop} Character string vector of length one,
+                              specifying the scores population from which we
+                              want to sample scores. By default, its value is
+                              \code{defaultPopulation(object)}. Use
+                              \code{\link{populations}()} to find out the
+                              available scores populations.
+                   \item \code{scores.only} Flag setting whether only the scores
+                              should be returned as a numeric vector (\code{TRUE}),
+                              instead of returning them as a metadata column in a
+                              \code{GRanges} object (\code{FALSE}, default).
+                   \item \code{ranges} Either a \code{GRanges} object or a
+                              character string vector of sequence names. Scores
+                              will be sampled from the given genomic regions,
+                              which by default correspond to the entire genomic
+                              space of \code{object}. Currently, only entire
+                              chromosomes are considered.
                  }
             }
 }

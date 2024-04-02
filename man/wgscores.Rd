@@ -18,24 +18,24 @@ Functions to discover which genomic scores are present in given genomic ranges t
   \item{...}{In the call to the \code{wgscores}() method one can additionally
              set the following arguments:
              \itemize{
-               \item{pop: }{Character string vector specifying the scores
+               \item \code{pop:} Character string vector specifying the scores
                             populations to query, when there is more than one.
                             By default, its value is 'defaultPopulation(x)'.
                             Use \code{\link{populations}()} to find out the
-                            available scores populations.}
-               \item{type: }{Character string specifying the type of genomic
+                            available scores populations.
+               \item \code{type:} Character string specifying the type of genomic
                              position being sought, which can be a single
                              nucleotide range (\code{snr}), by default, or a
                              \code{nonsnr} spanning multiple nucleotides. The
                              latter is the case of indel variants in minor
-                             allele frequency data.}
-               \item{caching: }{Flag setting whether genomic scores per
+                             allele frequency data.
+               \item \code{caching:} Flag setting whether genomic scores per
                                 chromosome should be kept cached in memory
                                 (\code{TRUE}, default) or not (\code{FALSE}).
                                 The latter option minimizes the memory
                                 footprint but slows down the performance when
                                 the \code{wgscores()} method is called multiple
-                                times.}
+                                times.
              }}
 }
 \details{

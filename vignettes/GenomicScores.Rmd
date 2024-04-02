@@ -376,7 +376,7 @@ Annotation Package          | Description
 `r Biocpkg("MafDb.gnomAD.r2.1.GRCh38")` | MAF data from gnomAD 15496 genomes for the human genome version GRCh38.
 `r Biocpkg("MafDb.gnomADex.r2.1.hs37d5")` | MAF data from gnomADex 123136 exomes for the human genome version GRCh37.
 `r Biocpkg("MafDb.gnomADex.r2.1.GRCh38")` | MAF data from gnomADex 123136 exomes for the human genome version GRCh38.
-`r Biocpkg("MafH5.gnomAD.v3.1.2.GRCh38")` | MAF data from gnomAD 76156 genomes for the human genome version GRCh38.
+`r Biocpkg("MafH5.gnomAD.v4.0.GRCh38")` | MAF data from gnomAD 76156 genomes for the human genome version GRCh38.
 `r Biocpkg("MafDb.TOPMed.freeze5.hg19")` | MAF data from NHLBI TOPMed 62784 genomes for the human genome version GRCh37.
 `r Biocpkg("MafDb.TOPMed.freeze5.hg38")` | MAF data from NHLBI TOPMed 62784 genomes for the human genome version GRCh38.
 
@@ -386,12 +386,12 @@ In this type of package, the scores populations correspond to populations of
 individuals from which the MAF data were derived, and all MAF data were
 compressed using a precision of one significant figure for MAF < 0.1 and two
 significant figures for MAF >= 0.1. Let's load the MAF package for the
-release v3.1.2 of gnomAD [@karczewski2020mutational].
+release v4.0 of gnomAD [@chen2024genomic].
 
 ```{r, message=FALSE, warning=FALSE, cache=FALSE}
-library(MafH5.gnomAD.v3.1.2.GRCh38)
+library(MafH5.gnomAD.v4.0.GRCh38)
 
-mafh5 <- MafH5.gnomAD.v3.1.2.GRCh38
+mafh5 <- MafH5.gnomAD.v4.0.GRCh38
 mafh5
 
 populations(mafh5)

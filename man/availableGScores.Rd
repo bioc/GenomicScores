@@ -35,21 +35,24 @@ The function \code{availableGScores()} returns a \code{data.frame} object
 with a row for each available resource of genomic scores and the following
 four columns:
   \itemize{
-    \item{Name: }{Name of the Bioconductor package or \code{AnnotationHub}
-                  resource.}
-    \item{Organism: }{Organism on which the genomic scores are defined.}
-    \item{Category: }{Category to which the genomic scores belong to.}
-    \item{Installed: }{Whether the resource is installed as a package (\code{TRUE})
-                       or not (\code{FALSE}).}
-    \item{Cached: }{Whether the resource is available within the local cache
-                    of the \code{AnnotationHub} (\code{TRUE}) or not (\code{FALSE}).}
-    \item{BiocManagerInstall: }{Whether the resource can be installed as an
-                                annotation package through \code{BiocManager::install()}
-                                (\code{TRUE}) or not (\code{FALSE}).}
-    \item{AnnotationHub: }{Whether the resource can be downloaded as a \code{GScores}
-                           object through the \code{AnnotationHub}, using the function
-                           \code{\link{getGScores}()} (\code{TRUE}), or not (\code{FALSE}).
-                           (\code{TRUE}) or not (\code{FALSE}).}
+    \item \code{Name:} Name of the Bioconductor package or \code{AnnotationHub}
+                  resource.
+    \item \code{Organism:} Organism on which the genomic scores are defined.
+    \item \code{Category:} Category to which the genomic scores belong to.
+    \item \code{Installed:} Whether the resource is installed as a package
+                            (\code{TRUE}) or not (\code{FALSE}).
+    \item \code{Cached:} Whether the resource is available within the local
+                         cache of the \code{AnnotationHub} (\code{TRUE}) or
+                         not (\code{FALSE}).
+    \item \code{BiocManagerInstall:} Whether the resource can be installed as
+                                     an annotation package through
+                                     \code{BiocManager::install()}
+                                     (\code{TRUE}) or not (\code{FALSE}).
+    \item \code{AnnotationHub:} Whether the resource can be downloaded as a
+                                \code{GScores} object through the
+                                \code{AnnotationHub}, using the function
+                                \code{\link{getGScores}()} (\code{TRUE}), or
+                                not (\code{FALSE}).
   }
 The function \code{getGScores()} returns a \code{GScores} object.
 }

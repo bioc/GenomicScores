@@ -17,68 +17,65 @@ Functions to access genomic gscores through \code{GScores} objects.
 }
 \arguments{
   \item{x}{A \code{GScores} object.}
-  \item{ranges}{A \code{GenomicRanges} object with positions from where to
-                retrieve genomic scores, or a character string vector with
+  \item{ranges}{A \code{GenomicRanges} object with positions from where
+                to retrieve genomic scores, or a character string vector with
                 identifiers associated by the data producer with the genomic
                 scores, e.g., dbSNP 'rs' identifiers in the case of some
                 \code{MafDb.*} packages.}
-  \item{...}{In the call to the \code{gscores}() method one can additionally
-             specify the following optional parameters:
+  \item{...}{In the call to the \code{gscores}() method one can
+             additionally specify the following optional parameters:
              \itemize{
-               \item{pop: }{Character string vector specifying the scores
+               \item \code{pop:} Character string vector specifying the scores
                             populations to query, when there is more than one.
                             By default, its value is 'defaultPopulation(x)'.
                             Use \code{\link{populations}()} to find out the
-                            available scores populations.}
-               \item{type: }{Character string specifying the type of genomic
-                             position being sought, which can be a single
-                             nucleotide range (\code{snr}), by default, or a
-                             \code{nonsnr} spanning multiple nucleotides. The
-                             latter is the case of indel variants in minor
-                             allele frequency data.}
-               \item{scores.only: }{Flag setting whether only the scores should
-                                    be returned as a numeric vector (\code{TRUE}),
-                                    instead of returning them as a metadata column
-                                    in a \code{GRanges} object (\code{FALSE}, default).}
-               \item{summaryFun: }{Function to summarize genomic scores when
-                                   more than one position is retrieved. By
-                                   default, this is set to the arithmetic mean,
-                                   i.e., the \code{mean()} function.}
-               \item{quantized: }{Flag setting whether the genomic scores
-                                  should be returned quantized (\code{TRUE})
-                                  or dequantized (\code{FALSE}, default).}
-               \item{ref: }{Vector of reference alleles in the form of either
+                            available scores populations.
+               \item \code{type:} Character string specifying the type of
+                            genomic position being sought, which can be a
+                            single nucleotide range (\code{snr}), by default,
+                            or a \code{nonsnr} spanning multiple nucleotides.
+                            The latter is the case of indel variants in minor
+                            allele frequency data.
+               \item \code{scores.only:} Flag setting whether only the scores
+                            should be returned as a numeric vector (\code{TRUE}),
+                            instead of returning them as a metadata column
+                            in a \code{GRanges} object (\code{FALSE}, default).
+               \item \code{summaryFun:} Function to summarize genomic scores when
+                            more than one position is retrieved. By
+                            default, this is set to the arithmetic mean,
+                            i.e., the \code{mean()} function.
+               \item \code{quantized:} Flag setting whether the genomic scores
+                            should be returned quantized (\code{TRUE})
+                            or dequantized (\code{FALSE}, default).
+               \item \code{ref:} Vector of reference alleles in the form of either
                             a character vector, a \code{DNAStringSet} object
                             or a \code{DNAStringSetList} object. This argument
                             is used only when either there are multiple scores per
-                            position or \code{x} is a \code{MafDb.*} package.}
-               \item{alt: }{Vector of alternative alleles in the form of either
+                            position or \code{x} is a \code{MafDb.*} package.
+               \item \code{alt:} Vector of alternative alleles in the form of either
                             a character vector, a \code{DNAStringSet} object or
                             a \code{DNAStringSetList} object. This argument is
                             used only when either there are multiple scores per
-                            position or \code{x} is a \code{MafDb.*} package.}
-               \item{minoverlap: }{Integer value passed internally to the
-                                   function \code{findOverlaps()} from the
-                                   \code{IRanges} package, when querying
-                                   genomic positions associated with
-                                   multiple-nucleotide ranges (nonSNRs). By
-                                   default, \code{minoverlap=1L}, which assumes
-                                   that the sought nonSNRs are stored as in
-                                   \code{VCF} files, using the nucleotide
-                                   composition of the reference sequence. This
-                                   argument is only relevant for genomic scores
-                                   associated with nonSNRs.}
-               \item{caching: }{Flag setting whether genomic scores per
-                                chromosome should be kept cached in memory
-                                (\code{TRUE}, default) or not (\code{FALSE}).
-                                The latter option minimizes the memory
-                                footprint but slows down the performance when
-                                the \code{gscores()} method is called multiple
-                                times.}
+                            position or \code{x} is a \code{MafDb.*} package.
+               \item \code{minoverlap:} Integer value passed internally to the
+                            function \code{findOverlaps()} from the \code{IRanges}
+                            package, when querying genomic positions associated
+                            with multiple-nucleotide ranges (nonSNRs). By default,
+                            \code{minoverlap=1L}, which assumes that the sought
+                            nonSNRs are stored as in \code{VCF} files, using the
+                            nucleotide composition of the reference sequence. This
+                            argument is only relevant for genomic scores associated
+                            with nonSNRs.
+               \item \code{caching:} Flag setting whether genomic scores per
+                            chromosome should be kept cached in memory (\code{TRUE},
+                            default) or not (\code{FALSE}). The latter option
+                            minimizes the memory footprint but slows down the
+                            performance when the \code{gscores()} method is called
+                            multiple times.
              }}
   \item{simplify}{Flag setting whether the result should be simplified to a
-                  vector (\code{TRUE}, default) if possible. This happens
-                  when scores from a single population are queried.}
+             vector (\code{TRUE}, default) if possible. This happens when scores
+             from a single population are queried.}
 }
 \details{
 The method \code{gscores()} takes as first argument a \code{GScores}
